@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Rahul Mehta",
+    "phone": "98XXX 45210",
+    "type": "Home Interior",
+    "budget": "₹5–8 Lakh",
+    "status": "New",
+    "date": "22 Sep 2026"
+  },
+  {
+    "id": 2,
+    "name": "Sana Khan",
+    "phone": "98XXX 78120",
+    "type": "Modular Kitchen",
+    "budget": "₹2–3 Lakh",
+    "status": "Contacted",
+    "date": "20 Sep 2026"
+  },
+  {
+    "id": 3,
+    "name": "Deepak Yadav",
+    "phone": "98XXX 33445",
+    "type": "Office",
+    "budget": "₹8–12 Lakh",
+    "status": "In Progress",
+    "date": "18 Sep 2026"
+  },
+  {
+    "id": 4,
+    "name": "Meera Kulkarni",
+    "phone": "98XXX 90211",
+    "type": "Bedroom",
+    "budget": "₹1–2 Lakh",
+    "status": "Completed",
+    "date": "15 Sep 2026"
+  },
+  {
+    "id": 5,
+    "name": "Arjun Patel",
+    "phone": "98XXX 66780",
+    "type": "Renovation",
+    "budget": "₹3–5 Lakh",
+    "status": "New",
+    "date": "12 Sep 2026"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "phone": "+91 7351400063 / +91 9837027055",
+  "phone_link": "tel:+917351400063",
+  "whatsapp": "https://wa.me/917351400063?text=Hi%20Ananya%20Interior%2C%20I%20want%20a%20trade%20consultation.",
+  "maps": "https://www.google.com/maps/search/?api=1&query=G-8+Kailash+Tower+Near+ICICI+Bank+Sanjay+Place+Agra+282002",
+  "address": "21/18, Mangal Sen Bhawan, Freeganj, Agra (U.P) 282004",
+  "display_centre": "G-8 Kailash Tower, Near ICICI Bank, Sanjay Place, Agra - 282002",
+  "godown": "Opp. Maya Devi Cold Storage, Village Ujrai, Hathras Road, Agra - 282006",
+  "mobile": "+91 9568011400",
+  "website": "www.ananyaagra.com",
+  "images": {
+    "hero": "/images/company-profile/page-01-image-01.png",
+    "about": "/images/company-profile/page-02-image-01.png",
+    "aboutSmall": "/images/company-profile/page-26-image-01.png",
+    "cta": "/images/company-profile/page-04-image-03.png",
+    "living": "/images/company-profile/page-23-image-01.png",
+    "texture": "/images/company-profile/page-25-image-01.png",
+    "bedroom": "/images/company-profile/page-01-image-01.png",
+    "kitchen": "/images/company-profile/page-04-image-03.png",
+    "office": "/images/company-profile/page-03-image-01.png",
+    "dining": "/images/company-profile/page-04-image-02.png",
+    "luxury": "/images/company-profile/page-04-image-01.png",
+    "detail": "/images/company-profile/page-25-image-01.png"
+  }
+}

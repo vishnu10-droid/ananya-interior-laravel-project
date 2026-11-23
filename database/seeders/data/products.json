@@ -1,0 +1,757 @@
+[
+  {
+    "id": "plywood-0-0-0",
+    "name": "MR Plywood – Moisture Resistant",
+    "description": "Light weight, smooth finish and budget-friendly.",
+    "bestFor": "bedroom furniture, wardrobes, TV units and all dry areas.",
+    "image": "/images/company-profile/page-06-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-0-1",
+    "name": "BWR Plywood – Boiling Water Resistant",
+    "description": "Strong bonding and termite resistant.",
+    "bestFor": "kitchen shutters, bathroom vanity and dining tables.",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-0-2",
+    "name": "BWP Plywood – Boiling Water Proof / Marine",
+    "description": "100% waterproof and strongest of all. Life 25+ years.",
+    "bestFor": "kitchen, bathroom, outdoor furniture and heavy-use areas.",
+    "image": "/images/company-profile/page-12-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-0-3",
+    "name": "Flexi Plywood",
+    "description": "Bends easily for curves.",
+    "bestFor": "round pillars, arches, curved panels and reception desks.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-0-4",
+    "name": "Calibrated Plywood",
+    "description": "Perfect equal thickness, machine pressed.",
+    "bestFor": "modular kitchens, CNC work and premium finishing.",
+    "image": "/images/company-profile/page-06-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-0-5",
+    "name": "Fire Retardant Plywood",
+    "description": "Slow burning and fire-safe.",
+    "bestFor": "offices, hospitals, schools, theatres and commercial spaces.",
+    "image": "/images/company-profile/page-12-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-1-0",
+    "name": "Softwood Block Board",
+    "description": "Light and economical.",
+    "bestFor": "partitions, small shelves and light furniture.",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-1-1",
+    "name": "Hardwood Block Board",
+    "description": "Very strong, does not bend.",
+    "bestFor": "doors, large dining tables, bookshelves and bed frames.",
+    "image": "/images/company-profile/page-06-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "plywood-0-1-2",
+    "name": "BWP Block Board",
+    "description": "Waterproof and heavy duty.",
+    "bestFor": "kitchen doors and bathroom doors.",
+    "image": "/images/company-profile/page-12-image-01.png",
+    "categoryName": "Plywood",
+    "categorySlug": "plywood",
+    "guideId": "plywood",
+    "brands": [
+      "Greenply",
+      "SRG",
+      "Kalapatrau",
+      "ANANYA Compact",
+      "Austin",
+      "Century",
+      "Ironic"
+    ]
+  },
+  {
+    "id": "doors-1-0-0",
+    "name": "Flush Door",
+    "description": "Simple, flat and smooth surface. Light weight and budget-friendly.",
+    "bestFor": "bedrooms, bathrooms and interior rooms.",
+    "image": "/images/company-profile/page-11-image-01.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "doors-1-0-1",
+    "name": "Panel Door / Moulded Door",
+    "description": "Beautiful trade with panels and moulding. Premium look.",
+    "bestFor": "main entrance, living room and bedroom doors.",
+    "image": "/images/company-profile/page-14-image-06.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "doors-1-0-2",
+    "name": "Solid Wood Door",
+    "description": "Made from pure hardwood like Teak, Sagwan. Very strong, heavy and long-lasting.",
+    "bestFor": "main entrance, villa and premium homes.",
+    "image": "/images/company-profile/page-10-image-01.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "doors-1-0-3",
+    "name": "Laminated Door",
+    "description": "Plywood door with laminate finish. Many colours and textures available. Easy to maintain.",
+    "bestFor": "bedroom, kitchen and modern interiors.",
+    "image": "/images/company-profile/page-14-image-06.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "doors-1-0-4",
+    "name": "Veneer Door",
+    "description": "Natural wood look with real veneer finish. Elegant and classy.",
+    "bestFor": "living room, study room and luxury homes.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "doors-1-0-5",
+    "name": "PVC / WPC Door",
+    "description": "100% waterproof, termite-proof and no maintenance.",
+    "bestFor": "bathrooms, toilets and wet areas.",
+    "image": "/images/company-profile/page-11-image-01.png",
+    "categoryName": "Doors",
+    "categorySlug": "doors",
+    "guideId": "doors",
+    "brands": [
+      "Greenply",
+      "Century",
+      "Legend",
+      "ANANYA",
+      "SRG",
+      "Kalapatrau"
+    ]
+  },
+  {
+    "id": "laminates-2-0-0",
+    "name": "Glossy Laminate",
+    "description": "High shine, mirror-like finish. Looks premium and modern.",
+    "bestFor": "wardrobes, TV units, kitchen shutters and showroom furniture. Gives a rich, luxurious feel.",
+    "image": "/images/company-profile/page-07-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-1",
+    "name": "Matte Laminate",
+    "description": "Soft, no-shine finish. Elegant and calm look. No fingerprints.",
+    "bestFor": "bedroom wardrobes, study tables, living room panels and modern homes.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-2",
+    "name": "Textured Laminate",
+    "description": "Feels like real wood, fabric or stone. Natural touch.",
+    "bestFor": "bed back panels, wardrobes, TV walls and luxury interiors.",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-3",
+    "name": "Wooden / Wood Grain Laminate",
+    "description": "Looks exactly like real teak, walnut, oak. Budget-friendly alternative to real wood.",
+    "bestFor": "doors, wardrobes, dining tables and classic interiors.",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-4",
+    "name": "Solid Colour Laminate",
+    "description": "Single clean colour, available in 100+ shades. Simple and trendy.",
+    "bestFor": "kids room, modular kitchen, office furniture and contemporary homes.",
+    "image": "/images/company-profile/page-07-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-5",
+    "name": "Metallic / Mirror Laminate",
+    "description": "Shiny metallic and mirror effect. Very stylish.",
+    "bestFor": "wardrobe accents, bar units, boutique and commercial spaces.",
+    "image": "/images/company-profile/page-21-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-6",
+    "name": "Acrylic Laminate",
+    "description": "Super glossy, glass-like premium finish. Very smooth and rich.",
+    "bestFor": "high-end modular kitchens, wardrobes and luxury furniture.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-7",
+    "name": "Super Matte / Anti-Fingerprint Laminate",
+    "description": "Ultra soft touch, no fingerprints, no marks.",
+    "bestFor": "premium wardrobes, kitchen shutters and tradeer furniture.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-8",
+    "name": "Digital / Tradeer Laminate",
+    "description": "Printed trades, patterns, 3D effects. Unique and creative.",
+    "bestFor": "kids room, cafe, showroom, feature walls.",
+    "image": "/images/company-profile/page-08-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "laminates-2-0-9",
+    "name": "Exterior Grade Laminate",
+    "description": "Weather-proof, UV-proof and waterproof.",
+    "bestFor": "outdoor furniture, balcony panels, shop front and exterior cladding.",
+    "image": "/images/company-profile/page-24-image-01.png",
+    "categoryName": "Decorative Laminates",
+    "categorySlug": "decorative-laminate",
+    "guideId": "laminates",
+    "brands": [
+      "Merino",
+      "Greenlam",
+      "Century",
+      "NewMika"
+    ]
+  },
+  {
+    "id": "veneers-3-0-0",
+    "name": "Natural Veneer",
+    "description": "Made from real wood slice. Every sheet has a unique natural grain. No two pieces are same.",
+    "bestFor": "luxury wardrobes, bed back panels, dining tables and premium homes. Gives a warm, royal feel.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-1",
+    "name": "Recon / Engineered Veneer",
+    "description": "Made by re-joining natural wood to create a perfect, uniform grain. Consistent colour and pattern.",
+    "bestFor": "large projects, offices, hotels and modern interiors where matching is important.",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-2",
+    "name": "Smoked Veneer",
+    "description": "Wood is treated with smoke to get deep, dark rich colour. Very premium and dramatic.",
+    "bestFor": "TV walls, bar units, study rooms and luxury lounges.",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-3",
+    "name": "Dyed Veneer",
+    "description": "Natural veneer coloured in shades like grey, black, walnut, wenge. Trendy and tradeer look.",
+    "bestFor": "contemporary homes, cafes, boutiques and feature walls.",
+    "image": "/images/company-profile/page-07-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-4",
+    "name": "Burl / Figured Veneer",
+    "description": "Rare, beautiful swirls and natural figures in wood. Very exclusive.",
+    "bestFor": "statement furniture, centre tables, headboards and tradeer pieces.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-5",
+    "name": "Teak Veneer",
+    "description": "Classic Indian favourite. Golden brown, strong grain.",
+    "bestFor": "main doors, wardrobes, living room furniture and traditional homes.",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-6",
+    "name": "Walnut Veneer",
+    "description": "Dark brown, rich and sophisticated.",
+    "bestFor": "luxury bedrooms, libraries, offices and premium wardrobes.",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-7",
+    "name": "Oak Veneer",
+    "description": "Light, straight grain, Scandinavian look.",
+    "bestFor": "modern homes, minimal interiors, kids room and light theme furniture.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-8",
+    "name": "Wenge / Ebony Veneer",
+    "description": "Almost black, very deep and bold.",
+    "bestFor": "luxury TV units, bar counters, high-end offices.",
+    "image": "/images/company-profile/page-14-image-06.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "veneers-3-0-9",
+    "name": "Fabric / Paper-Backed Veneer",
+    "description": "Veneer pasted on flexible backing. Easy to apply on curves.",
+    "bestFor": "curved panels, pillars, round tables and tradeer ceilings.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Veneers",
+    "categorySlug": "veneers",
+    "guideId": "veneers",
+    "brands": [
+      "Greenlam Decowood",
+      "Greenply",
+      "Decmore",
+      "Turakhia"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-0",
+    "name": "PVC Wall Panel",
+    "description": "Light weight, waterproof and very easy to install. No paint, no polish needed. Budget-friendly and long-lasting.",
+    "bestFor": "living room, bedroom, ceiling, office and rental homes.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-1",
+    "name": "WPC Wall Panel",
+    "description": "Wood + Plastic mix. Strong, waterproof and termite-proof. Looks like real wood.",
+    "bestFor": "TV walls, bed back walls, office cabins and lobbies.",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-2",
+    "name": "Wooden / Veneer Wall Panel",
+    "description": "Real wood finish, warm and luxurious.",
+    "bestFor": "living room, bedroom, study room and luxury homes. Gives a royal, classy feel.",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-3",
+    "name": "Laminate Wall Panel",
+    "description": "Plywood or MDF base with laminate finish. 1000+ colours and textures.",
+    "bestFor": "wardrobes wall, TV units, showrooms and modern interiors.",
+    "image": "/images/company-profile/page-07-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-4",
+    "name": "3D Wall Panel",
+    "description": "Raised trade, stone, wave and geometric patterns. Very stylish.",
+    "bestFor": "TV back wall, entrance wall, cafe, salon and boutique.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-5",
+    "name": "Acoustic / Fabric Wall Panel",
+    "description": "Absorbs sound, reduces echo. Soft and premium.",
+    "bestFor": "home theatre, bedroom, office meeting room, studio and hospital.",
+    "image": "/images/company-profile/page-20-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-6",
+    "name": "Charcoal Panel / Louver Panel",
+    "description": "Slim vertical lines, modern look. Very trending now.",
+    "bestFor": "TV wall, bed back, partition and office background.",
+    "image": "/images/company-profile/page-16-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-0-7",
+    "name": "Stone / Marble Finish Panel",
+    "description": "Looks like real marble and stone, but light and low cost.",
+    "bestFor": "living room, lobby, bathroom wall and commercial spaces.",
+    "image": "/images/company-profile/page-24-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-1-0",
+    "name": "ACP Panel – Aluminium Composite Panel",
+    "description": "Weather-proof, UV-proof and very strong.",
+    "bestFor": "shop front, building facade, balcony and exterior cladding.",
+    "image": "/images/company-profile/page-21-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-1-1",
+    "name": "HPL / Exterior Laminate Panel",
+    "description": "Waterproof, sun-proof and scratch-proof.",
+    "bestFor": "exterior walls, balcony, terrace and outdoor furniture.",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-1-2",
+    "name": "WPC Exterior Panel",
+    "description": "Does not fade in sun or rain.",
+    "bestFor": "exterior walls, garden walls, farmhouse and resort.",
+    "image": "/images/company-profile/page-19-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  },
+  {
+    "id": "wall-panels-4-1-3",
+    "name": "Natural Stone Cladding Panel",
+    "description": "Real stone look, very durable.",
+    "bestFor": "main entrance wall, villa exterior and temple / feature wall.",
+    "image": "/images/company-profile/page-24-image-01.png",
+    "categoryName": "Decmore Wall Panels",
+    "categorySlug": "decmore-wall-panels",
+    "guideId": "wall-panels",
+    "brands": [
+      "Decmore"
+    ]
+  }
+]

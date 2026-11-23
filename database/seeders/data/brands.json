@@ -1,0 +1,78 @@
+{
+  "names": [
+    "Greenply",
+    "SRG",
+    "Kalapatrau",
+    "ANANYA Compact",
+    "Austin",
+    "Century",
+    "Ironic",
+    "Merino",
+    "NewMika",
+    "Greenlam",
+    "Pedro",
+    "Shivshakti",
+    "Greenlam Decowood",
+    "Decmore",
+    "Turakhia",
+    "Ventura",
+    "Alfreso",
+    "Alstone",
+    "Dario",
+    "Black Cobra",
+    "ALSTONE",
+    "Action TESA",
+    "Unique",
+    "Legend",
+    "Woodium FCB",
+    "Shera FCB",
+    "Ramco",
+    "Ramco HD",
+    "BVG",
+    "Greenlam Mikasa",
+    "Rehau",
+    "E3",
+    "Zarik",
+    "Alu Decor",
+    "Timex",
+    "NewMika FX",
+    "Greenlam Clads",
+    "Heritage",
+    "VOX",
+    "VOX Primerra"
+  ],
+  "logos": [
+    {
+      "name": "Greenply",
+      "image": "/images/brands/greenply.svg"
+    },
+    {
+      "name": "Merino",
+      "image": "/images/brands/merino.png"
+    },
+    {
+      "name": "Greenlam",
+      "image": "/images/brands/greenlam.png"
+    },
+    {
+      "name": "Century",
+      "image": "/images/brands/century.png"
+    },
+    {
+      "name": "Decmore",
+      "image": "/images/brands/decmore.jpg"
+    },
+    {
+      "name": "Ramco",
+      "image": "/images/brands/ramco.png"
+    },
+    {
+      "name": "VOX",
+      "image": "/images/brands/vox.svg"
+    },
+    {
+      "name": "Rehau",
+      "image": "/images/brands/rehau.png"
+    }
+  ]
+}

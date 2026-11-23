@@ -1,0 +1,162 @@
+[
+  {
+    "id": "home-interiors",
+    "name": "Home Interiors",
+    "desc": "Complete interior solutions for modern homes.",
+    "icon": "Home",
+    "image": "/images/company-profile/page-26-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "living-room",
+    "name": "Living Room",
+    "desc": "Elegant spaces tradeed for comfort and personality.",
+    "icon": "Sofa",
+    "image": "/images/company-profile/page-02-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "bedroom",
+    "name": "Bedroom",
+    "desc": "Calm, sophisticated and personalized bedrooms.",
+    "icon": "BedDouble",
+    "image": "/images/company-profile/page-01-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "modular-kitchen",
+    "name": "Modular Kitchen",
+    "desc": "Functional kitchens with modern storage solutions.",
+    "icon": "CookingPot",
+    "image": "/images/company-profile/page-04-image-03.png",
+    "status": "Active"
+  },
+  {
+    "id": "wardrobe",
+    "name": "Wardrobe",
+    "desc": "Customized wardrobes tradeed around your needs.",
+    "icon": "DoorClosed",
+    "image": "/images/company-profile/page-10-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "office-interiors",
+    "name": "Office Interiors",
+    "desc": "Professional and productive workspace trade.",
+    "icon": "Briefcase",
+    "image": "/images/company-profile/page-03-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "false-ceiling",
+    "name": "False Ceiling",
+    "desc": "Modern ceiling concepts with architectural lighting.",
+    "icon": "LampCeiling",
+    "image": "/images/company-profile/page-04-image-02.png",
+    "status": "Active"
+  },
+  {
+    "id": "renovation",
+    "name": "Renovation",
+    "desc": "Transform existing spaces into modern interiors.",
+    "icon": "Hammer",
+    "image": "/images/company-profile/page-25-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "plywood",
+    "name": "Plywood",
+    "desc": "Interior, exterior, marine, structural, decorative, BWP, MR, BWR, fire-retardant and sustainable plywood types.",
+    "icon": "Home",
+    "image": "/images/company-profile/page-05-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "decorative-laminate",
+    "name": "Decorative Laminate",
+    "desc": "High Pressure (HPL), Low Pressure (LPL), Compact, Decorative Paper and Thermosetting laminates for furniture and construction.",
+    "icon": "Sofa",
+    "image": "/images/company-profile/page-07-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "hpl",
+    "name": "HPL (High Pressure Laminates)",
+    "desc": "Versatile, durable and aesthetic HPL for building facades, interior trade, furniture and signage.",
+    "icon": "CookingPot",
+    "image": "/images/company-profile/page-23-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "veneers",
+    "name": "Veneers",
+    "desc": "Natural, recon, smoked, dyed and textured wood veneers for furniture and wall enhancement.",
+    "icon": "DoorClosed",
+    "image": "/images/company-profile/page-08-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "flooring",
+    "name": "Flooring",
+    "desc": "Wooden, laminated and other flooring options including solid hardwood, engineered wood, bamboo and HPL flooring.",
+    "icon": "BedDouble",
+    "image": "/images/company-profile/page-16-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "thermo-wood",
+    "name": "ThermoWood",
+    "desc": "Thermo-S (softwood exterior), Thermo-D (deciduous interior/exterior) thermally modified wood for enhanced durability.",
+    "icon": "LampCeiling",
+    "image": "/images/company-profile/page-18-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "td-walls",
+    "name": "TD Walls",
+    "desc": "Solid wood panels, decorative wooden wall panels, tradeer wood mosaics and 3D wall panels (Aster series).",
+    "icon": "Briefcase",
+    "image": "/images/company-profile/page-19-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "decmore",
+    "name": "Decmore Wall Panels",
+    "desc": "Premium tradeer decorative wall panels offering sustainable, eco-friendly surfaces in wide colors and trades.",
+    "icon": "Hammer",
+    "image": "/images/company-profile/page-21-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "vox",
+    "name": "VOX Panels",
+    "desc": "Building materials including Infratop ceiling panels, soffit systems, facade solutions and wall panels.",
+    "icon": "Briefcase",
+    "image": "/images/company-profile/page-22-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "wpc-cladding",
+    "name": "WPC Cladding & Decking",
+    "desc": "Exterior wall covering and outdoor flooring with durability, low maintenance and weather resistance.",
+    "icon": "Home",
+    "image": "/images/company-profile/page-09-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "wpc-doors",
+    "name": "WPC Boards, Doors & Frames",
+    "desc": "Wood plastic composite doors and frames with moisture resistance, termite-proof and fire retardant properties.",
+    "icon": "DoorClosed",
+    "image": "/images/company-profile/page-10-image-01.png",
+    "status": "Active"
+  },
+  {
+    "id": "fcb",
+    "name": "Fibre Cement Board (FCB)",
+    "desc": "Cement, sand and cellulose fiber boards for exterior cladding, interior partitioning and ceiling linings.",
+    "icon": "Briefcase",
+    "image": "/images/company-profile/page-14-image-06.png",
+    "status": "Active"
+  }
+]
