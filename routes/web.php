@@ -18,6 +18,27 @@ Route::get('/blog', [PublicController::class, 'blog'])->name('blog');
 Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 Route::post('/contact/enquiry', [PublicController::class, 'storeEnquiry'])->name('contact.enquiry');
 
+Route::get('/robots.txt', fn () => response(
+    "User-agent: *\nAllow: /\n\nSitemap: ".url('/sitemap.xml')."\n",
+    200,
+    ['Content-Type' => 'text/plain']
+));
+
+Route::get('/sitemap.xml', function () {
+    $urls = collect(['/', '/about', '/services', '/products', '/brands', '/categories', '/blog', '/contact'])
+        ->merge(\App\Models\Product::active()->pluck('slug')->map(fn ($s) => '/products/'.$s))
+        ->merge(\App\Models\Category::active()->pluck('slug')->map(fn ($s) => '/categories/'.$s))
+        ->merge(\App\Models\Service::active()->pluck('slug')->map(fn ($s) => '/services/'.$s));
+
+    $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n".'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n";
+    foreach ($urls as $path) {
+        $xml .= '  <url><loc>'.e(url($path)).'</loc></url>'."\n";
+    }
+    $xml .= '</urlset>';
+
+    return response($xml, 200, ['Content-Type' => 'application/xml']);
+});
+
 /* Laravel's auth middleware redirects to the "login" route name. */
 Route::get('/login', fn () => redirect()->route('admin.login'))->name('login');
 
