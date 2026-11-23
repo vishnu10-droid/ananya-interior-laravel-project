@@ -1,0 +1,46 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  /** @type {import('tailwindcss').Config} */
+  content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        cream: "#FAF7F2",
+        beige: "#F1EAE0",
+        sand: "#E8DCCF",
+        charcoal: "#1C1917",
+        espresso: "#3E2F25",
+        coffee: "#6B5B4C",
+        gold: "#C6A87C",
+        golddark: "#A98548",
+        stonewarm: "#8A7E71",
+        // Ananya editorial palette (shared by the About experience)
+        ivory: "#F8F4EE",
+        parchment: "#EFE6DA",
+        walnut: "#2B201A",
+        brown: "#3A291F",
+        champagne: "#C49A5A",
+        ink: "#29231F",
+        muted: "#817467",
+        // Contact experience — exact brand palette from the design reference
+        creamwarm: "#F2EADF",
+        espressodeep: "#211914",
+        brownrich: "#493020",
+      },
+      fontFamily: {
+        serif: ['"Playfair Display"', "Georgia", "serif"],
+        sans: ['"Jost"', "ui-sans-serif", "system-ui", "sans-serif"],
+      },
+      boxShadow: {
+        soft: "0 20px 60px -20px rgba(62,47,37,0.25)",
+        card: "0 10px 40px -12px rgba(28,25,23,0.18)",
+        lift: "0 24px 70px -18px rgba(28,25,23,0.35)",
+      },
+    },
+  },
+  plugins: [],
+};
