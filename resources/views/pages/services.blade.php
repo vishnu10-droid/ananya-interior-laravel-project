@@ -6,7 +6,7 @@
     $phone         = \App\Models\Setting::get('phone', '+91 7351400063 / +91 90847 27055');
     $phoneLink     = \App\Models\Setting::get('phone_link', 'tel:+917351400063');
     $whatsapp      = \App\Models\Setting::get('whatsapp', 'https://wa.me/917351400063?text=Hi%20Ananya%20Interior%2C%20I%20want%20a%20trade%20consultation.');
-    $mapsUrl       = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=Mangal+Sen+Bhawan%2C+21%2F18%2C+Freeganj+Rd%2C+Belanganj%2C+Civil+Lines%2C+Agra%2C+Uttar+Pradesh+282003');
+    $mapsUrl       = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=27.1990526%2C78.0058476');
     $address       = \App\Models\Setting::get('address', 'Mangal Sen Bhawan, 21/18, Freeganj Rd, Belanganj, Civil Lines, Agra, Uttar Pradesh 282003');
     $displayCentre = \App\Models\Setting::get('display_centre', 'G-8 Kailash Tower, Near ICICI Bank, Sanjay Place, Agra - 282002');
     $godown        = \App\Models\Setting::get('godown', 'Opp. Maya Devi Cold Storage, Village Ujrai, Hathras Road, Agra - 282006');

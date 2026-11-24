@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Livewire\Admin\CategoryManager;
 use App\Livewire\Admin\ProductManager;
+use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\User;
@@ -73,13 +74,44 @@ class AdminCrudTest extends TestCase
         $this->get('/')->assertDontSee('CRUD Verification Category');
     }
 
+    public function test_admin_added_product_shows_under_its_category_and_brand(): void
+    {
+        $admin = User::where('email', 'admin@ananyaagra.com')->firstOrFail();
+        $category = Category::where('slug', 'plywood')->firstOrFail();
+        $brand = Brand::where('name', 'Greenply')->firstOrFail();
+
+        Livewire::actingAs($admin)->test(ProductManager::class)
+            ->set('name', 'Category Brand Link Product')
+            ->set('category_id', $category->id)
+            ->set('brand_id', $brand->id)
+            ->call('save')
+            ->assertHasNoErrors();
+
+        $product = Product::where('slug', 'category-brand-link-product')->firstOrFail();
+
+        $this->get('/categories/plywood')
+            ->assertStatus(200)
+            ->assertSee('Category Brand Link Product');
+
+        $this->get('/brands/'.$brand->slug)
+            ->assertStatus(200)
+            ->assertSee('Category Brand Link Product')
+            ->assertSee('All Greenply products');
+
+        $this->get('/brands')->assertSee('/brands/'.$brand->slug);
+
+        $this->get('/products?q=Category%20Brand%20Link')->assertSee('Plywood');
+
+        $product->delete();
+    }
+
     public function test_corporate_office_and_google_map_are_shown(): void
     {
         $this->get('/contact')
             ->assertStatus(200)
             ->assertSee('Ananya Endless Decor')
             ->assertSee('Mangal Sen Bhawan, 21/18, Freeganj Rd, Belanganj, Civil Lines, Agra, Uttar Pradesh 282003')
-            ->assertSee('Mangal+Sen+Bhawan')
+            ->assertSee('27.1990526%2C78.0058476')
             ->assertSee('output=embed');
 
         $this->get('/about')

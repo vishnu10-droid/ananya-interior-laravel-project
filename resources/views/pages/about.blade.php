@@ -6,8 +6,8 @@
     $address = \App\Models\Setting::get('address', 'Mangal Sen Bhawan, 21/18, Freeganj Rd, Belanganj, Civil Lines, Agra, Uttar Pradesh 282003');
     $phoneLink = \App\Models\Setting::get('phone_link', 'tel:+917351400063');
     $officeName = \App\Models\Setting::get('office_name', 'Ananya Endless Decor');
-    $mapsLink = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=Mangal+Sen+Bhawan%2C+21%2F18%2C+Freeganj+Rd%2C+Belanganj%2C+Civil+Lines%2C+Agra%2C+Uttar+Pradesh+282003');
-    $mapsEmbed = \App\Models\Setting::get('maps_embed', 'https://www.google.com/maps?q=Mangal+Sen+Bhawan%2C+21%2F18%2C+Freeganj+Rd%2C+Belanganj%2C+Civil+Lines%2C+Agra%2C+Uttar+Pradesh+282003&output=embed');
+    $mapsLink = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=27.1990526%2C78.0058476');
+    $mapsEmbed = \App\Models\Setting::get('maps_embed', 'https://www.google.com/maps?q=27.1990526%2C78.0058476&z=17&output=embed');
 
     $img = [
         'hero' => 'https://images.unsplash.com/photo-1723258341592-e76d798273bb?auto=format&fit=crop&w=2000&q=85',

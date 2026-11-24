@@ -15,8 +15,8 @@
     $heroImage = \App\Models\Setting::get('image_hero', '/images/company-profile/page-01-image-01.png');
     $textureImage = '/images/company-profile/page-25-image-01.png';
     $whatsapp = \App\Models\Setting::get('whatsapp', 'https://wa.me/917351400063?text=Hi%20Ananya%20Interior%2C%20I%20want%20a%20trade%20consultation.');
-    $mapsUrl = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=Mangal+Sen+Bhawan%2C+21%2F18%2C+Freeganj+Rd%2C+Belanganj%2C+Civil+Lines%2C+Agra%2C+Uttar+Pradesh+282003');
-    $mapsEmbed = \App\Models\Setting::get('maps_embed', 'https://www.google.com/maps?q=Mangal+Sen+Bhawan%2C+21%2F18%2C+Freeganj+Rd%2C+Belanganj%2C+Civil+Lines%2C+Agra%2C+Uttar+Pradesh+282003&output=embed');
+    $mapsUrl = \App\Models\Setting::get('maps_url', 'https://www.google.com/maps/dir/?api=1&destination=27.1990526%2C78.0058476');
+    $mapsEmbed = \App\Models\Setting::get('maps_embed', 'https://www.google.com/maps?q=27.1990526%2C78.0058476&z=17&output=embed');
     $hours = \App\Models\Setting::get('hours', 'Open 24 Hours, all days');
     $activeType = old('type', 'Home Interior');
 @endphp
