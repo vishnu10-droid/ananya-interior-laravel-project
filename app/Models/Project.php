@@ -7,12 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
-#[Fillable(['title', 'slug', 'category', 'location', 'date', 'description', 'image', 'featured', 'published', 'sort_order'])]
+#[Fillable(['title', 'slug', 'category', 'location', 'date', 'description', 'highlights', 'image', 'featured', 'published', 'sort_order'])]
 class Project extends Model
 {
     protected function casts(): array
     {
         return [
+            'highlights' => 'array',
             'featured' => 'boolean',
             'published' => 'boolean',
         ];

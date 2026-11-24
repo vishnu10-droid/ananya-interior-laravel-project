@@ -42,6 +42,11 @@ Route::get('/sitemap.xml', function () {
 /* Laravel's auth middleware redirects to the "login" route name. */
 Route::get('/login', fn () => redirect()->route('admin.login'))->name('login');
 
+/* The public navbar's dashboard button points here (same as the React app).
+   Forward to the protected admin dashboard — unauthenticated users are then
+   redirected to the admin login by the auth middleware. */
+Route::get('/dashboard', fn () => redirect()->route('admin.dashboard'))->name('dashboard');
+
 /* ---------------- Admin authentication ---------------- */
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.post');
@@ -55,6 +60,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         'products' => 'product-manager',
         'categories' => 'category-manager',
         'brands' => 'brand-manager',
+        'services' => 'service-manager',
+        'projects' => 'project-manager',
+        'media' => 'media-manager',
         'customers' => 'enquiry-manager',
         'testimonials' => 'testimonial-manager',
         'blogs' => 'blog-manager',

@@ -12,7 +12,7 @@
             <label class="block text-xs uppercase tracking-wider text-coffee">Description<textarea wire:model="description" rows="2" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></textarea></label>
             <label class="block text-xs uppercase tracking-wider text-coffee">Logo URL<input wire:model="logo" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
             <label class="block text-xs uppercase tracking-wider text-coffee">Or upload logo<input type="file" wire:model="photo" class="mt-1.5 w-full text-xs"></label>
-            <label class="flex items-center gap-2 text-sm"><input type="checkbox" wire:model="status" class="accent-gold"> Active</label>
+            <div class="flex gap-5 text-sm"><label class="flex items-center gap-2"><input type="checkbox" wire:model="featured" class="accent-gold"> Featured logo</label><label class="flex items-center gap-2"><input type="checkbox" wire:model="status" class="accent-gold"> Active</label></div>
             <button type="submit" class="w-full rounded-full bg-charcoal py-3 text-sm text-cream">Save Brand</button>
         </form>
     </div>

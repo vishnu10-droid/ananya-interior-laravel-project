@@ -15,14 +15,21 @@
     @stack('head')
 </head>
 <body class="bg-cream text-charcoal font-sans antialiased" data-home="{{ request()->is('/') ? '1' : '0' }}">
+    <div data-scroll-progress></div>
+
     @include('partials.navbar')
 
-    <main class="min-h-screen pt-[72px]">
+    <main class="min-h-screen {{ request()->is('/') ? '' : 'pt-[72px]' }}">
         @yield('content')
     </main>
 
-    @include('partials.footer')
-    @include('partials.floating-buttons')
+    @if (! request()->is('about'))
+        @include('partials.footer')
+    @endif
+
+    @if (! request()->is('about') && ! request()->is('categories*'))
+        @include('partials.floating-buttons')
+    @endif
 
     @livewireScripts
     @stack('scripts')

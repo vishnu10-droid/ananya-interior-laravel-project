@@ -16,6 +16,7 @@ class BlogManager extends Component
     public string $category = '';
     public string $content = '';
     public string $meta_description = '';
+    public string $highlights = '';
     public string $thumbnail = '';
     public $photo = null;
     public bool $published = true;
@@ -29,13 +30,14 @@ class BlogManager extends Component
         $this->category = $b->category ?? '';
         $this->content = $b->content ?? '';
         $this->meta_description = $b->meta_description ?? '';
+        $this->highlights = implode("\n", $b->highlights ?? []);
         $this->thumbnail = $b->thumbnail ?? '';
         $this->published = (bool) $b->published;
     }
 
     public function resetForm(): void
     {
-        $this->reset(['editingId', 'title', 'slug', 'category', 'content', 'meta_description', 'thumbnail', 'photo']);
+        $this->reset(['editingId', 'title', 'slug', 'category', 'content', 'meta_description', 'highlights', 'thumbnail', 'photo']);
         $this->published = true;
     }
 
@@ -50,7 +52,7 @@ class BlogManager extends Component
         ]);
 
         if ($this->photo) {
-            $this->thumbnail = $this->photo->store('blogs', 'public');
+            $this->thumbnail = '/storage/'.$this->photo->store('blogs', 'public');
         }
 
         Blog::updateOrCreate(['id' => $this->editingId], [
@@ -59,6 +61,7 @@ class BlogManager extends Component
             'category' => $this->category ?: null,
             'content' => $this->content ?: null,
             'meta_description' => $this->meta_description ?: null,
+            'highlights' => array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $this->highlights) ?: []))),
             'thumbnail' => $this->thumbnail ?: null,
             'author' => auth()->user()->name,
             'seo_title' => $this->title,

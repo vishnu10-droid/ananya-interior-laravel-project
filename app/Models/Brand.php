@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 
-#[Fillable(['name', 'slug', 'logo', 'description', 'website_url', 'status', 'sort_order'])]
+#[Fillable(['name', 'slug', 'logo', 'description', 'website_url', 'status', 'featured', 'sort_order'])]
 class Brand extends Model
 {
     protected function casts(): array
     {
-        return ['status' => 'boolean'];
+        return ['status' => 'boolean', 'featured' => 'boolean'];
     }
 
     protected static function booted(): void

@@ -11,12 +11,16 @@
     @livewireStyles
 </head>
 <body class="bg-cream text-charcoal font-sans antialiased">
+    <div data-scroll-progress></div>
 @php
     $links = [
         ['dashboard', 'Dashboard', 'M3 12h18M3 6h18M3 18h18', 'admin.dashboard'],
         ['products', 'Products', 'M20 7 12 3 4 7l8 4 8-4Zm-16 0v10l8 4 8-4V7M12 11v10', 'admin.products'],
         ['categories', 'Categories', 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z', 'admin.categories'],
         ['brands', 'Brands', 'M20 12 12 4 4 12l8 8 8-8ZM8 12l4-4 4 4-4 4-4-4Z', 'admin.brands'],
+        ['services', 'Services', 'M4 6h16M4 12h16M4 18h10', 'admin.services'],
+        ['projects', 'Projects', 'M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6', 'admin.projects'],
+        ['media', 'Gallery & Reels', 'M4 5h16v14H4zM4 15l4-4 4 4 3-3 5 5', 'admin.media'],
         ['customers', 'Customers & Enquiries', 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75', 'admin.customers'],
         ['testimonials', 'Testimonials', 'M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27Z', 'admin.testimonials'],
         ['blogs', 'Blogs', 'M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z', 'admin.blogs'],
@@ -27,7 +31,7 @@
 @endphp
 
 <div class="min-h-screen">
-    <aside class="hidden lg:block fixed left-0 top-0 bottom-0 w-64 border-r border-charcoal/10 bg-white/80 backdrop-blur z-40">
+    <aside class="motion-in-left hidden lg:block fixed left-0 top-0 bottom-0 w-64 border-r border-charcoal/10 bg-white/80 backdrop-blur z-40" style="--d:.05s">
         <div class="flex flex-col h-full">
             <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-6 h-[72px] border-b border-charcoal/10 text-left">
                 <span class="w-10 h-10 rounded-lg bg-charcoal text-gold grid place-items-center font-serif text-lg">AF</span>
@@ -48,7 +52,7 @@
     </aside>
 
     <div class="lg:pl-64">
-        <header class="sticky top-0 z-30 border-b border-charcoal/10 bg-cream/85 backdrop-blur-xl">
+        <header class="motion-in-up sticky top-0 z-30 border-b border-charcoal/10 bg-cream/85 backdrop-blur-xl" style="--d:.12s">
             <div class="flex items-center gap-3 px-4 md:px-8 h-[72px]">
                 <a href="/" class="text-sm text-coffee hover:text-golddark">← Website</a>
                 <div class="ml-auto flex items-center gap-3 text-sm">
@@ -57,7 +61,7 @@
                 </div>
             </div>
         </header>
-        <main class="p-4 md:p-8 max-w-7xl">
+        <main class="motion-in-up p-4 md:p-8 max-w-7xl" style="--d:.18s">
             @yield('content')
         </main>
     </div>

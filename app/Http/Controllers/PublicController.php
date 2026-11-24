@@ -6,11 +6,13 @@ use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Enquiry;
+use App\Models\Media;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Testimonial;
+use App\Support\CatalogueData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -26,7 +28,88 @@ class PublicController extends Controller
             'testimonials' => Testimonial::approved()->orderBy('sort_order')->get(),
             'blogs' => Blog::published()->latest('published_at')->get(),
             'products' => Product::active()->featured()->orderBy('sort_order')->get(),
+
+            /* Every block below is DB-backed — add/edit/delete in the admin
+               panel immediately changes what the home page renders. */
+            'featuredBrands' => Brand::active()->where('featured', true)->orderBy('sort_order')
+                ->get()->map(fn ($brand) => [
+                    'name' => $brand->name,
+                    'image' => $brand->logo,
+                ])->all(),
+
+            'featured' => Category::active()->featured()->orderBy('sort_order')
+                ->get()->map(fn ($category) => [
+                    'name' => $category->name,
+                    'slug' => $category->slug,
+                    'tag' => $category->tag ?: 'The Edit',
+                    'note' => $category->note ?: $category->description,
+                    'image' => $category->image ?: '/images/company-profile/page-06-image-01.png',
+                    'details' => $category->description,
+                    'features' => $category->features ?? [],
+                    'variants' => $category->variants ?? [],
+                    'brands' => $category->brands ?? [],
+                ])->all(),
+
+            'showcase' => Media::where('folder', 'showcase')->orderBy('id')
+                ->get()->map(fn ($media) => [
+                    'src' => $media->path,
+                    'title' => $media->title ?: $media->alt_text,
+                    'category' => $media->category,
+                ])->all(),
+
+            'featuredProjects' => Project::published()->where('featured', true)
+                ->with('images')->orderBy('sort_order')->get()->map(fn ($project) => [
+                    'name' => $project->title,
+                    'category' => $project->category,
+                    'location' => $project->location,
+                    'image' => $project->image,
+                    'description' => $project->description,
+                    'highlights' => $project->highlights ?? [],
+                    'gallery' => $project->images->pluck('path')->all() ?: [$project->image],
+                ])->all(),
+
+            'stories' => Testimonial::approved()->orderBy('sort_order')
+                ->get()->map(fn ($review) => [
+                    'name' => $review->name,
+                    'location' => $review->designation,
+                    'date' => $review->date ?: $review->created_at?->format('M Y'),
+                    'rating' => (int) $review->rating,
+                    'avatar' => $review->image ?: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&fit=crop&crop=faces',
+                    'text' => $review->review,
+                ])->all(),
+
+            'blogPosts' => Blog::published()->latest('published_at')
+                ->get()->map(fn ($post) => [
+                    'id' => $post->slug,
+                    'title' => $post->title,
+                    'category' => $post->category,
+                    'filter' => $this->blogFilter($post->category),
+                    'date' => $post->published_at?->format('j M Y'),
+                    'image' => $post->thumbnail,
+                    'excerpt' => $post->meta_description,
+                    'body' => $post->content,
+                    'highlights' => $post->highlights ?? [],
+                ])->all(),
+
+            'reels' => Media::where('folder', 'reels')->orderBy('id')
+                ->get()->map(fn ($media) => [
+                    'title' => $media->title ?: $media->alt_text,
+                    'src' => $media->path,
+                    'caption' => $media->meta['caption'] ?? null,
+                    'overlay' => $media->meta['overlay'] ?? null,
+                    'tip' => $media->meta['tip'] ?? null,
+                ])->all(),
         ]);
+    }
+
+    private function blogFilter(?string $category): string
+    {
+        return match (true) {
+            str_contains((string) $category, 'Kitchen') => 'materials space',
+            str_contains((string) $category, 'Bedroom') => 'design trends',
+            str_contains((string) $category, 'Workspace') => 'space trends',
+            default => 'design materials',
+        };
     }
 
     public function about()
@@ -85,7 +168,28 @@ class PublicController extends Controller
 
     public function productDetails(string $slug)
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
+        $product = Product::where('slug', $slug)->first();
+
+        /* The reference site routes product details by CATEGORY slug
+           (e.g. /products/plywood) and picks an individual item with ?item=. */
+        if (! $product) {
+            $data = CatalogueData::data();
+            $reactCategory = collect($data['categories'])->firstWhere('slug', $slug);
+            if (! $reactCategory) {
+                abort(404);
+            }
+
+            $reactProducts = collect($data['allProducts']);
+            $itemId = request('item') ?: request('product');
+
+            return view('pages.product-details', [
+                'product' => null,
+                'related' => collect(),
+                'reactCategory' => $reactCategory,
+                'selectedItem' => $itemId ? $reactProducts->firstWhere('id', $itemId) : null,
+                'categoryProducts' => $reactProducts->where('categorySlug', $slug)->values(),
+            ]);
+        }
 
         return view('pages.product-details', [
             'product' => $product,

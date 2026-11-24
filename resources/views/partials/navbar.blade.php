@@ -60,26 +60,26 @@
 
 <div id="mobile-menu" class="fixed inset-0 z-[60] hidden lg:hidden">
     <div class="absolute inset-0 bg-charcoal/60 backdrop-blur-sm" data-close-menu></div>
-    <aside class="absolute right-0 top-0 h-full w-[84%] max-w-sm bg-cream shadow-lift flex flex-col">
+    <aside data-drawer-panel class="absolute right-0 top-0 h-full w-[84%] max-w-sm bg-cream shadow-lift flex flex-col">
         <div class="flex items-center justify-between px-6 h-[72px] border-b border-charcoal/10">
-            <a href="/" class="flex items-center shrink-0"><img src="/assets/logo.png" alt="Ananya Logo" class="w-[110px] h-[55px] object-contain"></a>
+            <a href="/" data-drawer-link class="flex items-center shrink-0"><img src="/assets/logo.png" alt="Ananya Logo" class="w-[110px] h-[55px] object-contain"></a>
             <button data-close-menu aria-label="Close menu" class="w-10 h-10 rounded-full grid place-items-center bg-white border border-charcoal/10">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
             </button>
         </div>
         <nav class="flex-1 overflow-y-auto px-6 py-6 flex flex-col gap-1">
             @foreach ($links as $link)
-                <a href="{{ $link['to'] }}" class="flex items-center justify-between py-3.5 border-b border-charcoal/10 font-serif text-[20px] {{ request()->is(ltrim($link['to'], '/')) ? 'text-champagne' : 'text-charcoal' }}">
+                <a href="{{ $link['to'] }}" data-drawer-link class="flex items-center justify-between py-3.5 border-b border-charcoal/10 font-serif text-[20px] {{ request()->is(ltrim($link['to'], '/')) || ($link['to'] === '/' && $isHome) ? 'text-champagne' : 'text-charcoal' }}">
                     {{ $link['label'] }}
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-40"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
                 </a>
             @endforeach
             <div class="mt-4 flex flex-wrap gap-2">
-                <a href="/services" class="rounded-full border border-charcoal/10 bg-white px-4 py-2 text-xs tracking-wide text-coffee hover:border-gold hover:text-charcoal">Services</a>
-                <a href="/brands" class="rounded-full border border-charcoal/10 bg-white px-4 py-2 text-xs tracking-wide text-coffee hover:border-gold hover:text-charcoal">Brands</a>
+                <a href="/services" data-drawer-link class="rounded-full border border-charcoal/10 bg-white px-4 py-2 text-xs tracking-wide text-coffee hover:border-gold hover:text-charcoal">Services</a>
+                <a href="/brands" data-drawer-link class="rounded-full border border-charcoal/10 bg-white px-4 py-2 text-xs tracking-wide text-coffee hover:border-gold hover:text-charcoal">Brands</a>
             </div>
-            <a href="/contact" class="mt-4 flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3.5 text-sm font-medium text-charcoal">Get a Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-            <a href="/dashboard" class="mt-5 flex items-center gap-3 rounded-xl bg-charcoal text-cream px-5 py-4 text-sm tracking-wide">Open Dashboard</a>
+            <a href="/contact" data-drawer-link class="mt-4 flex items-center justify-center gap-2 rounded-xl bg-gold px-5 py-3.5 text-sm font-medium text-charcoal">Get a Quote <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a href="/dashboard" data-drawer-link class="mt-5 flex items-center gap-3 rounded-xl bg-charcoal text-cream px-5 py-4 text-sm tracking-wide">Open Dashboard</a>
         </nav>
     </aside>
 </div>

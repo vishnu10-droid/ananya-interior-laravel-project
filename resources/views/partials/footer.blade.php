@@ -1,6 +1,6 @@
 @php
-    $phone = \App\Models\Setting::get('phone', '+91 7351400063 / +91 9837027055');
-    $address = \App\Models\Setting::get('address', '21/18, Mangal Sen Bhawan, Freeganj, Agra (U.P) 282004');
+    $phone = \App\Models\Setting::get('phone', '+91 7351400063 / +91 90847 27055');
+    $address = \App\Models\Setting::get('address', 'Mangal Sen Bhawan, 21/18, Freeganj Rd, Belanganj, Civil Lines, Agra, Uttar Pradesh 282003');
     $nav = [['/', 'Home'], ['/about', 'About'], ['/products', 'Products'], ['/brands', 'Brands'], ['/services', 'Services'], ['/contact', 'Contact']];
     $svc = [['/services/home-interiors', 'Home Interior'], ['/services/modular-kitchen', 'Modular Kitchen'], ['/services/bedroom', 'Bedroom'], ['/services/living-room', 'Living Room'], ['/services/office-interiors', 'Office Interior']];
     $socials = [
@@ -19,7 +19,7 @@
             <p class="mt-5 max-w-xs text-sm leading-relaxed text-cream/60">Premium residential and commercial interior design studio in Agra — modern, elegant and functional spaces.</p>
             <div class="mt-6 flex items-center gap-2.5">
                 @foreach ($socials as [$label, $href, $path])
-                    <a href="{{ $href }}" target="_blank" rel="noreferrer" aria-label="{{ $label }}" title="{{ $label }}" class="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-cream/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-champagne hover:bg-champagne/10 hover:text-champagne">
+                    <a href="{{ $href }}" target="_blank" rel="noreferrer" aria-label="{{ $label }}" title="{{ $label }}" data-lift data-shine class="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-cream/70 transition-all duration-300 hover:-translate-y-1 hover:border-champagne hover:bg-champagne/10 hover:text-champagne">
                         <svg viewBox="0 0 24 24" fill="currentColor" class="h-[15px] w-[15px]" aria-hidden="true"><path d="{{ $path }}"/></svg>
                     </a>
                 @endforeach
@@ -33,7 +33,7 @@
             </ul>
         </div>
 
-        <div data-reveal="up" class="lg:border-l lg:border-white/10 lg:pl-8">
+        <div data-reveal="up" data-delay="80" class="lg:border-l lg:border-white/10 lg:pl-8">
             <p class="text-[11px] font-medium uppercase tracking-[0.3em] text-champagne">Services</p>
             <ul class="mt-5 space-y-2.5 text-sm">
                 @foreach ($svc as [$to, $label])<li><a href="{{ $to }}" class="text-cream/70 transition-colors hover:pl-1 hover:text-champagne">{{ $label }}</a></li>@endforeach
@@ -43,7 +43,9 @@
         <div data-reveal="right" class="lg:border-l lg:border-white/10 lg:pl-8">
             <p class="text-[11px] font-medium uppercase tracking-[0.3em] text-champagne">Contact</p>
             <ul class="mt-5 space-y-3.5 text-sm text-cream/70">
-                <li><a href="tel:+917351400063" class="flex items-center gap-2.5 transition-colors hover:text-champagne"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-champagne"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>{{ $phone }}</a></li>
+                @foreach (\App\Models\Setting::phones() as $phoneOption)
+                    <li><a href="{{ $phoneOption['tel'] }}" class="flex items-center gap-2.5 transition-colors hover:text-champagne"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-champagne"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>{{ $phoneOption['label'] }}</a></li>
+                @endforeach
                 <li class="flex items-start gap-2.5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mt-0.5 shrink-0 text-champagne"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span class="leading-relaxed">{{ $address }}</span></li>
                 <li class="flex items-center gap-2.5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0 text-champagne"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Open 24 Hours</li>
             </ul>

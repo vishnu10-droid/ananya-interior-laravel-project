@@ -65,7 +65,7 @@ class ProductManager extends Component
         $this->validate();
 
         if ($this->photo) {
-            $this->image = $this->photo->store('products', 'public');
+            $this->image = '/storage/'.$this->photo->store('products', 'public');
         }
 
         Product::updateOrCreate(

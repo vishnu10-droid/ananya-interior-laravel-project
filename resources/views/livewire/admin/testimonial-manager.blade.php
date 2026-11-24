@@ -7,8 +7,13 @@
             <h3 class="font-serif text-xl">{{ $editingId ? 'Edit Testimonial' : 'Add Testimonial' }}</h3>
             @error('name')<p class="text-xs text-red-600">{{ $message }}</p>@enderror
             <label class="block text-xs uppercase tracking-wider text-coffee">Name<input wire:model="name" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
-            <label class="block text-xs uppercase tracking-wider text-coffee">Designation<input wire:model="designation" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
+            <div class="grid grid-cols-2 gap-3">
+                <label class="block text-xs uppercase tracking-wider text-coffee">Designation / City<input wire:model="designation" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
+                <label class="block text-xs uppercase tracking-wider text-coffee">Date<input wire:model="date" placeholder="Feb 2026" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
+            </div>
             <label class="block text-xs uppercase tracking-wider text-coffee">Review<textarea wire:model="review" rows="4" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></textarea></label>
+            <label class="block text-xs uppercase tracking-wider text-coffee">Photo URL<input wire:model="image" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm"></label>
+            <label class="block text-xs uppercase tracking-wider text-coffee">Or upload photo<input type="file" wire:model="photo" class="mt-1.5 w-full text-xs"></label>
             <label class="block text-xs uppercase tracking-wider text-coffee">Rating<select wire:model="rating" class="mt-1.5 w-full rounded-xl border border-charcoal/10 bg-cream px-4 py-2.5 text-sm">@for ($i=1;$i<=5;$i++)<option value="{{ $i }}">{{ $i }} stars</option>@endfor</select></label>
             <label class="flex items-center gap-2 text-sm"><input type="checkbox" wire:model="approved" class="accent-gold"> Approved</label>
             <button type="submit" class="w-full rounded-full bg-charcoal py-3 text-sm text-cream">Save Testimonial</button>

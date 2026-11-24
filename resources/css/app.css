@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* The HTML hidden attribute must win over Tailwind display utilities such as
+   `flex` / `grid` (used by the Shop-by-room rails and modals). */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; overflow-x: clip; }
 /* Clip horizontal slide-in movement without creating a scroll container
    (so fixed headers and GSAP pinning keep working). */
@@ -100,11 +104,15 @@ input:focus, select:focus, textarea:focus { border-color: #C6A87C !important; bo
   to { transform: scale(1); }
 }
 .hero-zoom { animation: hero-zoom 14s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes journal-zoom { from { transform: scale(1.14); } to { transform: scale(1); } }
+.journal-zoom { animation: journal-zoom 16s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes seal-in { from { opacity: 0; transform: scale(.8) rotate(-12deg); } to { opacity: 1; transform: none; } }
+.seal-in { animation: seal-in 1.1s var(--ease-expo) .9s both; }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee { animation: none; }
   .animate-marquee-reverse { animation: none; }
-  .hero-zoom { animation: none; }
+  .hero-zoom, .journal-zoom, .seal-in { animation: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -135,4 +143,218 @@ input:focus, select:focus, textarea:focus { border-color: #C6A87C !important; bo
 .nav-solid .nav-link { color: rgba(28, 25, 23, .8); }
 .nav-solid .nav-link:hover { color: #1C1917; }
 .nav-solid .nav-link.text-champagne { color: #C49A5A; }
+
+/* ==========================================================================
+   Motion system — brings back the React/Framer Motion feel with CSS + vanilla JS
+   ========================================================================== */
+:root {
+  --ease-expo: cubic-bezier(.16, 1, .3, 1);
+  --ease-soft: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* --- entrance keyframes ---------------------------------------------------- */
+@keyframes motion-fade-up    { from { opacity: 0; transform: translate3d(0, 44px, 0); }  to { opacity: 1; transform: none; } }
+@keyframes motion-fade-down  { from { opacity: 0; transform: translate3d(0, -32px, 0); } to { opacity: 1; transform: none; } }
+@keyframes motion-fade-left  { from { opacity: 0; transform: translate3d(-44px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes motion-fade-right { from { opacity: 0; transform: translate3d(44px, 0, 0); }  to { opacity: 1; transform: none; } }
+@keyframes motion-zoom-in    { from { opacity: 0; transform: scale(.92) translate3d(0, 20px, 0); } to { opacity: 1; transform: none; } }
+@keyframes motion-clip-up    { from { opacity: 0; transform: translate3d(0, 110%, 0); } to { opacity: 1; transform: none; } }
+@keyframes motion-hero-bg-in { from { opacity: 0; transform: scale(1.14); } to { opacity: 1; transform: scale(1); } }
+@keyframes motion-float-y    { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -8px, 0); } }
+@keyframes motion-bob        { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, 8px, 0); } }
+@keyframes motion-pulse-soft { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.86); } }
+@keyframes motion-spin-slow  { to { transform: rotate(360deg); } }
+@keyframes motion-float-in   { from { opacity: 0; transform: translate3d(24px, 24px, 0) scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes motion-shine      { from { transform: translateX(-120%); } to { transform: translateX(220%); } }
+
+/* --- entrance utilities (delay: style="--d:.3s") ---------------------------- */
+.motion-in-up    { animation: motion-fade-up .8s var(--ease-soft) var(--d, 0s) both; }
+.motion-in-down  { animation: motion-fade-down .8s var(--ease-soft) var(--d, 0s) both; }
+.motion-in-left  { animation: motion-fade-left .9s var(--ease-expo) var(--d, 0s) both; }
+.motion-in-right { animation: motion-fade-right .9s var(--ease-expo) var(--d, 0s) both; }
+.motion-in-zoom  { animation: motion-zoom-in .85s var(--ease-soft) var(--d, 0s) both; }
+.motion-in-float { animation: motion-float-in .7s var(--ease-soft) var(--d, 0s) both; }
+
+/* Clip-style heading reveal — inner element slides up inside its own box. */
+[data-text-reveal] { display: inline-block; overflow: hidden; vertical-align: top; }
+[data-text-reveal] > span { display: inline-block; animation: motion-clip-up .9s var(--ease-expo) var(--d, 0s) both; }
+
+/* Ambient loops */
+[data-float]       { animation: motion-float-y 6s ease-in-out var(--d, 1.2s) infinite; }
+[data-bob]         { animation: motion-bob 1.8s ease-in-out infinite; }
+[data-pulse-soft]  { animation: motion-pulse-soft 2.4s ease-in-out infinite; }
+[data-spin-slow]   { animation: motion-spin-slow 18s linear infinite; }
+
+/* Hero: JS writes --hero-* custom properties on the wrapper/content nodes. */
+[data-hero-parallax] { perspective: 1200px; }
+[data-hero-bg-wrap] {
+  will-change: transform, opacity;
+  transform: translate3d(var(--hero-x, 0%), var(--hero-y, 0%), 0) scale(var(--hero-scale, 1));
+  opacity: var(--hero-opacity, 1);
+}
+[data-hero-bg] { animation: motion-hero-bg-in 1.8s var(--ease-expo) both; }
+[data-hero-content] {
+  will-change: transform, opacity;
+  transform: translate3d(0, var(--hero-content-y, 0%), 0);
+  opacity: var(--hero-content-opacity, 1);
+}
+
+/* Scroll-linked image drift (JS writes --parallax-y). */
+[data-parallax] { overflow: hidden; }
+[data-parallax] img,
+[data-parallax] [data-parallax-layer] {
+  will-change: transform;
+  transform: translate3d(0, var(--parallax-y, 0%), 0) scale(1.1);
+}
+
+/* Pointer tilt for cards (JS writes --rx / --ry). */
+[data-tilt] { transform-style: preserve-3d; will-change: transform; }
+[data-tilt]:hover { transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px); }
+
+/* Light sweep on hover for buttons and marquee cards. */
+[data-shine] { position: relative; overflow: hidden; }
+[data-shine]::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+[data-shine]:hover::after { animation: motion-shine .9s ease-out; }
+
+.animate-marquee, .animate-marquee-reverse { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-in-up, .motion-in-down, .motion-in-left, .motion-in-right,
+  .motion-in-zoom, .motion-in-float, [data-text-reveal] > span,
+  [data-float], [data-bob], [data-pulse-soft], [data-spin-slow], [data-hero-bg],
+  [data-shine]::after { animation: none !important; }
+  [data-text-reveal] > span { opacity: 1 !important; transform: none !important; }
+  [data-hero-bg-wrap], [data-hero-content], [data-parallax] img,
+  [data-parallax] [data-parallax-layer] { transform: none !important; opacity: 1 !important; }
+  [data-tilt]:hover { transform: none !important; }
+}
+
+/* ==========================================================================
+   Motion engine v2 — full Framer Motion / GSAP parity for Blade templates
+   ========================================================================== */
+
+/* --- 3D flip cards: JS toggles .is-flipped on .flip-inner ------------------ */
+.flip-inner { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.flip-inner.is-flipped { transform: rotateY(180deg); }
+.flip-face--front, .flip-face--back { display: flex; flex-direction: column; }
+[data-flip] { transition: transform .5s var(--ease-soft), box-shadow .5s var(--ease-soft); }
+[data-flip]:hover { transform: translateY(-6px); box-shadow: 0 24px 70px -18px rgba(28,25,23,.35); }
+[data-flip-toggle] { cursor: pointer; }
+
+/* --- Floating buttons entrance (data-float-in style="--d:.9s") ------------ */
+[data-float-in] { animation: motion-float-in .7s var(--ease-soft) var(--d, 0s) both; }
+
+/* --- AnimatePresence-style overlays ---------------------------------------- */
+[data-modal] { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+[data-modal][hidden] { display: none !important; }
+[data-modal] .modal-backdrop {
+  position: absolute; inset: 0; background: rgba(28, 25, 23, .74);
+  -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+  opacity: 0; transition: opacity .32s ease;
+}
+[data-modal].is-open .modal-backdrop { opacity: 1; }
+[data-modal] .modal-panel {
+  position: relative; width: 100%; z-index: 1;
+  opacity: 0; transform: scale(.94) translateY(24px);
+  transition: opacity .38s var(--ease-expo), transform .38s var(--ease-expo);
+}
+[data-modal].is-open .modal-panel { opacity: 1; transform: none; }
+[data-modal] [data-modal-close] { cursor: pointer; }
+
+/* --- Mobile drawer: backdrop fades, sheet springs in from the right ------- */
+#mobile-menu { opacity: 0; transition: opacity .3s ease; }
+#mobile-menu.is-open { opacity: 1; }
+#mobile-menu [data-drawer-panel] {
+  transform: translate3d(100%, 0, 0);
+  transition: transform .48s cubic-bezier(.16,1,.3,1);
+}
+#mobile-menu.is-open [data-drawer-panel] { transform: none; }
+#mobile-menu [data-drawer-link] { opacity: 0; transform: translateX(24px); }
+#mobile-menu.is-open [data-drawer-link] {
+  animation: motion-fade-right .5s var(--ease-expo) var(--d, 0s) both;
+}
+
+/* --- Testimonials 3D cover-flow ------------------------------------------ */
+[data-coverflow] { position: relative; }
+[data-coverflow-card] {
+  position: absolute; left: 50%; top: 50%;
+  transition: transform .75s var(--ease-soft), opacity .75s var(--ease-soft);
+  will-change: transform, opacity;
+}
+[data-coverflow-dots] button { transition: width .5s var(--ease-soft), background-color .3s ease; }
+
+/* --- Pinned horizontal scroll (GSAP ScrollTrigger replacement) ------------ */
+[data-hscroll] { position: relative; }
+[data-hscroll-sticky] { position: sticky; top: 0; }
+[data-hscroll-viewport] {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+[data-hscroll-track] { display: flex; width: max-content; will-change: transform; }
+[data-hscroll].hscroll-static [data-hscroll-sticky] { position: static; height: auto !important; }
+[data-hscroll].hscroll-static [data-hscroll-viewport] { overflow: visible; -webkit-mask-image: none; mask-image: none; }
+[data-hscroll].hscroll-static [data-hscroll-track] { flex-wrap: wrap; width: 100%; transform: none !important; }
+[data-hscroll].hscroll-static [data-hscroll-track] > div { width: 100%; }
+@media (min-width: 640px) { [data-hscroll].hscroll-static [data-hscroll-track] > div { width: calc(50% - 0.625rem); } }
+
+/* --- Hero slider crossfade (ShopHeroSlider parity) ------------------------ */
+[data-hero-slider] [data-slide] {
+  position: absolute; inset: 0; opacity: 0;
+  transform: scale(1.04); transition: opacity .9s ease-in-out, transform 1.2s var(--ease-soft);
+}
+[data-hero-slider] [data-slide].is-active { opacity: 1; transform: scale(1); z-index: 1; }
+[data-hero-slider] [data-slide-caption] { opacity: 0; transform: translateY(16px); }
+[data-hero-slider] [data-slide].is-active [data-slide-caption] {
+  animation: motion-fade-up .8s var(--ease-expo) var(--d, .08s) both;
+}
+[data-slide-go] { transition: width .5s var(--ease-soft), background-color .3s ease; }
+
+/* --- Shop product card image crossfade (ShopProductCard parity) ------------ */
+[data-shop-card] .shop-front, [data-shop-card] .shop-hover {
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+[data-shop-card] .shop-front { opacity: 1; transform: scale(1); }
+[data-shop-card] .shop-hover { opacity: 0; transform: scale(1.28); }
+[data-shop-card]:hover .shop-front { opacity: 0; transform: scale(1.04); }
+[data-shop-card]:hover .shop-hover { opacity: 1; transform: scale(1.28); }
+
+/* --- Count-up stats ------------------------------------------------------- */
+[data-count] { font-variant-numeric: tabular-nums; }
+
+/* --- Filter pills / accordions / drag rails ------------------------------- */
+[data-filter-item] { transition: opacity .35s var(--ease-soft), transform .35s var(--ease-soft); }
+[data-filter-item].is-filtered-out { display: none; }
+[data-filter-item].is-entering { animation: motion-fade-up .5s var(--ease-soft) both; }
+[data-accordion-panel] { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .5s var(--ease-expo), opacity .4s ease; }
+[data-accordion-trigger] [data-accordion-icon] { transition: transform .3s ease; }
+[data-accordion-trigger][aria-expanded="true"] [data-accordion-icon] { transform: rotate(180deg); }
+[data-drag-rail] { cursor: grab; scroll-behavior: smooth; }
+[data-drag-rail].is-dragging { cursor: grabbing; scroll-behavior: auto; }
+
+/* --- Scroll progress bar -------------------------------------------------- */
+[data-scroll-progress] {
+  position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 95;
+  background: linear-gradient(90deg, #C6A87C, #A98548);
+  box-shadow: 0 0 10px rgba(198,168,124,.6); pointer-events: none;
+}
+
+/* --- Generic hover lifts used by the animated cards ----------------------- */
+[data-lift] { transition: transform .4s var(--ease-soft), box-shadow .4s var(--ease-soft), border-color .4s ease; }
+[data-lift]:hover { transform: translateY(-6px); box-shadow: 0 24px 70px -18px rgba(28,25,23,.35); }
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner, [data-flip], [data-modal] .modal-backdrop, [data-modal] .modal-panel,
+  #mobile-menu, #mobile-menu [data-drawer-panel], [data-coverflow-card],
+  [data-hero-slider] [data-slide], [data-scroll-progress] { transition: none !important; }
+  [data-float-in], #mobile-menu [data-drawer-link] { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
 

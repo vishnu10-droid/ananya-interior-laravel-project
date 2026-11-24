@@ -18,6 +18,7 @@ class BrandManager extends Component
     public string $logo = '';
     public $photo = null;
     public bool $status = true;
+    public bool $featured = false;
 
     public function edit(int $id): void
     {
@@ -29,12 +30,14 @@ class BrandManager extends Component
         $this->description = $b->description ?? '';
         $this->logo = $b->logo ?? '';
         $this->status = (bool) $b->status;
+        $this->featured = (bool) $b->featured;
     }
 
     public function resetForm(): void
     {
         $this->reset(['editingId', 'name', 'slug', 'website_url', 'description', 'logo', 'photo']);
         $this->status = true;
+        $this->featured = false;
     }
 
     public function save(): void
@@ -48,7 +51,7 @@ class BrandManager extends Component
         ]);
 
         if ($this->photo) {
-            $this->logo = $this->photo->store('brands', 'public');
+            $this->logo = '/storage/'.$this->photo->store('brands', 'public');
         }
 
         Brand::updateOrCreate(['id' => $this->editingId], [
@@ -58,6 +61,7 @@ class BrandManager extends Component
             'description' => $this->description ?: null,
             'logo' => $this->logo ?: null,
             'status' => $this->status,
+            'featured' => $this->featured,
         ]);
 
         session()->flash('message', 'Brand saved.');
